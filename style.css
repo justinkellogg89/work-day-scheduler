@@ -1,0 +1,29 @@
+.container-fluid{
+    margin-top: 5px;
+    padding: 0;
+}
+
+.timeSlot {
+    border-style: solid;
+   border-width: 1px;
+    border-left: hidden;
+    border-right: hidden;
+    border-bottom: hidden;
+    border-color: black;
+    height: 150px;
+}
+
+.fivePM {
+    border-style: solid;
+    border-left: hidden;
+    border-right: hidden;
+    border-width: 1px;
+    margin-bottom: 100px;   
+}
+
+.col-6 {
+    border: solid;
+    border-top: hidden;
+    border-bottom: hidden;
+    border-width: 3px;
+}

@@ -35,4 +35,19 @@ $(".hour").each(function() {
   }
 });
 
+$(".saveBtn").on("click", function(e){
+    e.preventDefault();
+    var scheduledStuff = $(this).siblings(".col-8").val();
+    localStorage.setItem("scheduledStuff", scheduledStuff);
+});
+
+function getScheduledStuff(){
+    var show = localStorage.getItem("scheduledStuff");
+    $("#0900").text(show);
+    if (show !== null){
+        return;
+    }
+}
+getScheduledStuff();
+
 

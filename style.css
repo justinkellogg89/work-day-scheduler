@@ -77,3 +77,10 @@ textarea{
   padding-left: 2px;
   padding-right: 2px;
 }
+
+#nineAM {
+  text-align: center;
+  border-color: black;
+  border-radius: 15px;
+  border-style: solid;
+}

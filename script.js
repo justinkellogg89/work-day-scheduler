@@ -16,7 +16,6 @@ $(".hour").each(function() {
     .removeClass("future")
     var currentHour = moment().hours();
     var elementHour = this.innerHTML;
-    console.log(this);
     if(currentHour == elementHour){
         $(this).addClass("present");
         $(this).siblings().addClass("present");
@@ -28,5 +27,6 @@ $(".hour").each(function() {
         $(this).siblings().addClass("future");
     }
     });
-console.log(moment().hours());
+
+
 

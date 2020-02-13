@@ -35,19 +35,35 @@ $(".hour").each(function() {
   }
 });
 
-$(".saveBtn").on("click", function(e){
-    e.preventDefault();
-    var scheduledStuff = $(this).siblings(".col-8").val();
-    localStorage.setItem("scheduledStuff", scheduledStuff);
+$(".saveBtn").on("click", function(e) {
+  e.preventDefault();
+  var val = $(this)
+  .siblings(".col-8")
+  .val();
+  var id = $(this)
+    .siblings(".hour")
+    .text();
+  var show = getScheduledStuff();
+  show[id] = val;
+  localStorage.setItem("scheduledStuff", JSON.stringify(show));
 });
 
-function getScheduledStuff(){
-    var show = localStorage.getItem("scheduledStuff");
-    $("#0900").text(show);
-    if (show !== null){
-        return;
-    }
+function getScheduledStuff() {
+  var show = localStorage.getItem("scheduledStuff");
+  if (show) {
+    show = JSON.parse(show);
+  } else {
+    show = {};
+  }
+
+  return show;
 }
-getScheduledStuff();
 
+function populateText() {
+  var show = getScheduledStuff();
+  for (let key in show) {
+    $("#" + key).val(show[key]); 
+  }
+}
 
+populateText();

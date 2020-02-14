@@ -12,26 +12,23 @@ function setTime() {
 //for the past, active, and future time blocks.
 $(".hour").each(function() {
   $(this)
-    .removeClass("active")
-    .removeClass("past")
-    .removeClass("future");
+  .removeClass("active")
+  .removeClass("past")
+  .removeClass("future");
   var currentHour = moment().hours();
   var elementHour = this.innerHTML;
   if (currentHour == elementHour) {
-    $(this).addClass("present");
     $(this)
-      .siblings() //targets all siblings to change color throughout entire row.
-      .addClass("present");
+    .siblings() //targets all siblings to change color throughout entire row.
+    .addClass("present");
   } else if (currentHour > elementHour) {
-    $(this).addClass("past");
     $(this)
-      .siblings() //targets all siblings to change color throughout entire row.
-      .addClass("past");
+    .siblings() //targets all siblings to change color throughout entire row.
+    .addClass("past");
   } else {
-    $(this).addClass("future");
     $(this)
-      .siblings() //targets all siblings to change color throughout entire row.
-      .addClass("future");
+    .siblings() //targets all siblings to change color throughout entire row.
+    .addClass("future");
   }
 });
 
@@ -48,6 +45,7 @@ $(".saveBtn").on("click", function(e) {
   localStorage.setItem("scheduledStuff", JSON.stringify(show));
 });
 
+
 function getScheduledStuff() {
   var show = localStorage.getItem("scheduledStuff");
   if (show) {
@@ -55,7 +53,7 @@ function getScheduledStuff() {
   } else {
     show = {};
   }
-
+  
   return show;
 }
 
